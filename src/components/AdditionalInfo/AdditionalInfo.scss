@@ -1,4 +1,8 @@
-.nav-link {
+.add-pills {
+  list-style: none;
+  margin-left: 380px;
+}
+.add-link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
@@ -6,9 +10,13 @@
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
-  color: #fff;
+  color: #02475e;
   font-size: 18px;
-  background-color: #02475e;
+
+  &:hover,
+  &:focus {
+    color: #f3bda1;
+  }
 }
 
 .active {

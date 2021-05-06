@@ -11,6 +11,7 @@ class HomePage extends Component {
   state = {
     movies: [],
     page: 1,
+    isLoading: false,
   };
 
   // async componentDidMount() {
@@ -22,8 +23,10 @@ class HomePage extends Component {
   async componentDidMount() {
     await this.fetchMovies();
   }
+
   async fetchMovies() {
     const { movies, page } = this.state;
+    this.setState({ isLoading: true });
     try {
       const response = await TrendingMoviesApi.fetchMovies({ page });
       await this.setState(prevState => ({
@@ -33,6 +36,7 @@ class HomePage extends Component {
     } catch (err) {
       console.log(err);
     } finally {
+      this.setState({ isLoading: false });
       page > 1 &&
         window.scrollTo({
           top: document.documentElement.scrollHeight,
@@ -43,10 +47,14 @@ class HomePage extends Component {
 
   render() {
     const { movies, isLoading } = this.state;
+    const displayLoadMoreButton = movies.length > 0 && !isLoading;
     return (
       <div className="container-fluid">
+        {isLoading && <h1>Loading...</h1>}
         <MovieList movies={movies} />
-        <Button onClick={this.fetchMovies.bind(this)} />
+        {displayLoadMoreButton && (
+          <Button onClick={this.fetchMovies.bind(this)} text={'Load more'} />
+        )}
       </div>
     );
   }

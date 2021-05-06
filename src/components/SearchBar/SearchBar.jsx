@@ -14,7 +14,6 @@ class SearchBar extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('HERE');
 
     // if (this.state.query.trim() === '') {
     //   toast('Please enter somenthing!');

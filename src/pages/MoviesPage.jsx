@@ -23,7 +23,6 @@ class MoviesPage extends Component {
   }
 
   async fetchMovies() {
-    // console.log(this.state);
     const { searchQuery, page } = this.state;
     this.setState({ isLoading: true });
     try {
@@ -63,7 +62,7 @@ class MoviesPage extends Component {
         {isLoading && <h1>Loading...</h1>}
         <MovieList movies={movies} />
         {displayLoadMoreButton && (
-          <Button onClick={this.fetchMovies.bind(this)} />
+          <Button onClick={this.fetchMovies.bind(this)} text={'Load more'} />
         )}
       </>
     );

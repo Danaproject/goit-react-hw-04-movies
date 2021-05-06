@@ -1,0 +1,32 @@
+.ReviewsList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__noReviews {
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
+.Review__card--body {
+  display: block;
+  padding: 20px;
+  margin: 20px auto;
+  justify-content: start;
+  width: 100%;
+  max-width: 1200px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #f6f7f8;
+  border: 2px solid #b8c7ce;
+  box-shadow: 0 0 14px 0px #b8c7ce;
+
+  & h3 {
+    color: #02475e;
+  }
+}
+.Review__card--gender {
+  font-weight: bold;
+  font-size: 14px;
+}

@@ -1,0 +1,43 @@
+.CastList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.Actor__card {
+  display: flex;
+  margin: 0px;
+  padding: 20px;
+  justify-content: start;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #f6f7f8;
+  border: 2px solid #b8c7ce;
+  box-shadow: 0 0 14px 0px #b8c7ce;
+}
+.Actor__card--body {
+  display: block;
+  width: 190px;
+}
+.Actor-thumb {
+  display: block;
+  margin-right: 20px;
+}
+
+.Actor-thumb > img {
+  display: block;
+  max-width: 110px;
+}
+.Actor__card--gender {
+  font-size: 12px;
+  color: #637279;
+}
+.Actor__card--character {
+  font-size: 14px;
+}
+.Actor__title {
+  color: #02475e;
+}
