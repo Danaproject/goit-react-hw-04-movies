@@ -11,8 +11,12 @@ class Reviews extends Component {
 
   async componentDidMount() {
     const { movieId } = this.props.match.params;
-    const response = await ReviewsApi.fetchReviews(movieId);
-    this.setState({ reviews: response });
+    try {
+      const response = await ReviewsApi.fetchReviews(movieId);
+      this.setState({ reviews: response });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {

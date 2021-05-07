@@ -10,8 +10,12 @@ class Cast extends Component {
 
   async componentDidMount() {
     const { movieId } = this.props.match.params;
-    const response = await CastApi.fetchCast(movieId);
-    this.setState({ actors: response });
+    try {
+      const response = await CastApi.fetchCast(movieId);
+      this.setState({ actors: response });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   render() {
