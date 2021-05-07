@@ -3,21 +3,22 @@
   margin: 40px;
   justify-content: center;
   background-color: #fff;
+
+  &--body {
+    display: block;
+    width: 400px;
+  }
+  &--body p {
+    font-size: 14px;
+  }
 }
-.MovieDetails__card--body {
-  display: block;
-  width: 400px;
-}
+
 .MovieDetails-thumb {
   display: block;
   margin-right: 20px;
-}
 
-.MovieDetails-thumb > img {
-  display: block;
-  max-width: 300px;
-}
-
-.MovieDetails__card--body p {
-  font-size: 14px;
+  & > img {
+    display: block;
+    max-width: 300px;
+  }
 }

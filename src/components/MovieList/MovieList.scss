@@ -11,12 +11,20 @@
 .MovieListItem__card {
   padding: 38px;
   padding-bottom: 0;
+  min-height: 440px;
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: #f6f7f8;
   cursor: pointer;
   border: 2px solid #b8c7ce;
   box-shadow: 0 0 14px 0px #b8c7ce;
+
+  &--title {
+    font-family: inherit;
+    color: #212121;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
 .MovieListItem-thumb > img {
@@ -28,10 +36,4 @@
   &:hover {
     transform: scale(1.03) translateY(-4px);
   }
-}
-.MovieListItem__card--title {
-  font-family: inherit;
-  color: #212121;
-  text-decoration: none;
-  text-transform: uppercase;
 }

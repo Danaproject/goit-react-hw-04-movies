@@ -4,16 +4,19 @@ import Button from '../components/Button/Button';
 import MovieDetails from '../components/MovieDetails';
 import AdditionalInfo from '../components/AdditionalInfo';
 import routes from '../routes';
+import Loader from '../components/Loader';
+import NotFoundPage from './NotFoundPage';
 
 class MovieDetailsView extends Component {
   state = {
-    id: null,
-    title: null,
-    popularity: null,
-    overview: null,
+    id: '',
+    title: '',
+    popularity: 0,
+    overview: '',
     genres: [],
-    poster_path: null,
+    poster_path: '',
     isLoading: false,
+    err: false,
   };
 
   async componentDidMount() {
@@ -24,6 +27,7 @@ class MovieDetailsView extends Component {
       this.setState({ ...response });
     } catch (err) {
       console.log(err);
+      this.setState({ err: true });
     } finally {
       this.setState({ isLoading: false });
     }
@@ -49,14 +53,19 @@ class MovieDetailsView extends Component {
       genres,
       poster_path,
       isLoading,
+      err,
     } = this.state;
     const displayGoBackButton = !isLoading;
+
+    if (err) {
+      return <NotFoundPage />;
+    }
     return (
       <>
         {displayGoBackButton && (
           <Button onClick={this.handleGoBack} text={'<< Go back'} />
         )}
-        {isLoading && <h1>Loading...</h1>}
+        {isLoading && <Loader />}
         <MovieDetails
           poster_path={poster_path}
           title={title}

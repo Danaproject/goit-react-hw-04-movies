@@ -28,7 +28,6 @@ const Actor = ({ profile_path, name, gender, character }) => {
 
 Actor.defaultProps = {
   profile_path: noPerson,
-  // avatar: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg",
 };
 
 Actor.propTypes = {

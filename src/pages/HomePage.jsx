@@ -3,6 +3,7 @@ import { Component } from 'react';
 import MovieList from '../components/MovieList';
 import Button from '../components/Button';
 import TrendingMoviesApi from '../components/api/trending-movies-api';
+import Loader from '../components/Loader';
 
 // const API_KEY = '12f4633a0c4c594f7f68f9ab5f50be1e';
 // Axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
@@ -25,7 +26,7 @@ class HomePage extends Component {
   }
 
   async fetchMovies() {
-    const { movies, page } = this.state;
+    const { page } = this.state;
     this.setState({ isLoading: true });
     try {
       const response = await TrendingMoviesApi.fetchMovies({ page });
@@ -50,7 +51,7 @@ class HomePage extends Component {
     const displayLoadMoreButton = movies.length > 0 && !isLoading;
     return (
       <div className="container-fluid">
-        {isLoading && <h1>Loading...</h1>}
+        {isLoading && <Loader />}
         <MovieList movies={movies} />
         {displayLoadMoreButton && (
           <Button onClick={this.fetchMovies.bind(this)} text={'Load more'} />

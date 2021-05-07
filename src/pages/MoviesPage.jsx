@@ -4,6 +4,7 @@ import MovieList from '../components/MovieList';
 import SearchBar from '../components/SearchBar';
 import SearchMoviesApi from '../components/api/search-movies-api';
 import Button from '../components/Button';
+import Loader from '../components/Loader';
 
 // const API_KEY = '12f4633a0c4c594f7f68f9ab5f50be1e';
 // Axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
@@ -59,7 +60,7 @@ class MoviesPage extends Component {
     return (
       <>
         <SearchBar onSubmit={this.onChangeQuery} />
-        {isLoading && <h1>Loading...</h1>}
+        {isLoading && <Loader />}
         <MovieList movies={movies} />
         {displayLoadMoreButton && (
           <Button onClick={this.fetchMovies.bind(this)} text={'Load more'} />

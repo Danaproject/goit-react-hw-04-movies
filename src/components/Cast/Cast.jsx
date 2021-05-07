@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import CastApi from '../api/cast-api';
 import Actor from './Actor';
-import noPerson from '../assets/noPerson.jpg';
 import './Cast.scss';
 
 class Cast extends Component {
