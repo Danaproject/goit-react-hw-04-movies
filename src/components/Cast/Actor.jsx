@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import noPerson from '../assets/noPerson.jpg';
+import noPerson from '../../assets/noPerson.jpg';
 import './Cast.scss';
-
 const imageUrl = 'https://image.tmdb.org/t/p/w500';
 
 const Actor = ({ profile_path, name, gender, character }) => {

@@ -35,8 +35,12 @@ class MovieDetailsView extends Component {
 
   handleGoBack = () => {
     const { location, history } = this.props;
-
     history.push(location?.state?.from || routes.movies);
+
+    // if (location.state && location.state.from) {
+    //   return history.push(location.state.from);
+    // }
+    // history.push(routes.movies);
   };
 
   render() {

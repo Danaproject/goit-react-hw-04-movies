@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import noMoviePoster from '../assets/noMoviePoster.jpg';
+import noMoviePoster from '../../assets/noMoviePoster.jpg';
 import './MovieDetails.scss';
 
 const imageUrl = 'https://image.tmdb.org/t/p/w500/';

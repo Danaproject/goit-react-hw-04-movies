@@ -1,5 +1,5 @@
 import './MovieList.scss';
-import noMoviePoster from '../assets/noMoviePoster.jpg';
+import noMoviePoster from '../../assets/noMoviePoster.jpg';
 import PropTypes from 'prop-types';
 
 const MovieListItem = ({ poster, title }) => {
