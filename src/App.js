@@ -8,16 +8,16 @@ import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import Loader from './components/Loader';
 
 const HomePage = lazy(() =>
-  import('./pages/HomePage.jsx' /* webpackChunkName: "home-view" */),
+  import('./pages/HomePage.jsx' /* webpackChunkName: "home-page" */),
 );
 
 const MoviesPage = lazy(() =>
-  import('./pages/MoviesPage.jsx' /* webpackChunkName: "authors-view" */),
+  import('./pages/MoviesPage.jsx' /* webpackChunkName: "movies-page" */),
 );
 
 const MovieDetailsPage = lazy(() =>
   import(
-    './pages/MovieDetailsPage.jsx' /* webpackChunkName: "book-details-view" */
+    './pages/MovieDetailsPage.jsx' /* webpackChunkName: "movie-details-page" */
   ),
 );
 

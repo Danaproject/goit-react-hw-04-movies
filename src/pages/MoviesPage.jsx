@@ -17,9 +17,21 @@ class MoviesPage extends Component {
     isLoading: false,
   };
 
+  componentDidMount() {
+    const storedMovies = JSON.parse(sessionStorage.getItem('moviesQuery'));
+    if (storedMovies && storedMovies.length) {
+      this.setState({
+        searchQuery: storedMovies,
+      });
+    }
+  }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchQuery !== this.state.searchQuery) {
       this.fetchMovies();
+      sessionStorage.setItem(
+        'moviesQuery',
+        JSON.stringify(this.state.searchQuery),
+      );
     }
   }
 
