@@ -1,5 +1,4 @@
 import { Component } from 'react';
-// import { toast } from 'react-toastify';
 import Container from '../Container';
 import './SearchBar.scss';
 
@@ -14,11 +13,6 @@ class SearchBar extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    // if (this.state.query.trim() === '') {
-    //   toast('Please enter somenthing!');
-    //   return;
-    // }
     this.props.onSubmit(this.state.query);
     this.setState({ query: '' });
   };

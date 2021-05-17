@@ -7,7 +7,7 @@ import routes from '../routes';
 import Loader from '../components/Loader';
 import NotFoundPage from './NotFoundPage';
 
-class MovieDetailsView extends Component {
+class MovieDetailsPage extends Component {
   state = {
     id: '',
     title: '',
@@ -35,6 +35,7 @@ class MovieDetailsView extends Component {
 
   handleGoBack = () => {
     const { location, history } = this.props;
+
     history.push(location?.state?.from || routes.movies);
 
     // if (location.state && location.state.from) {
@@ -77,4 +78,4 @@ class MovieDetailsView extends Component {
   }
 }
 
-export default MovieDetailsView;
+export default MovieDetailsPage;

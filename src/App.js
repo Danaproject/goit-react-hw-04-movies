@@ -4,7 +4,7 @@ import routes from './routes';
 import NotFoundPage from './pages/NotFoundPage';
 import AppBar from './components/AppBar';
 import Container from './components/Container';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+// import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import Loader from './components/Loader';
 
 const HomePage = lazy(() =>
